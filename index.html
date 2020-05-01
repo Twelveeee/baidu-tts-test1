@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>营销号模拟器</title>
+		<link rel="stylesheet" type="text/css" href="css/element.css" />
+		<style type="text/css">
+			.grid-content {
+				margin: auto;
+				margin-top: 30px;
+				margin-block: 30px;
+			}
+	
+			#app {
+				width: 100%;
+				padding-right: 15px;
+				padding-left: 15px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+	
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+			h1{
+				margin: 55px 0 20px;
+				font-weight: 400;
+				color: #1f2f3d;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="el-col el-col-24" id="app">
+				<h1>营销号模拟器</h1>
+				<div class="el-row">
+					<div class="el-col el-col-12">
+						<form class="el-form">
+							<div class="el-form-item">
+								<label class="el-form-item__label" style="width: 100px;">主体:</label>
+								<div class="el-form-item__content" style="margin-left: 100px;margin-right: 25px;">
+									<div class="el-input">
+										<input type="text" autocomplete="off" class="el-input__inner" v-model="mainbody">
+									</div>
+								</div>
+							</div>
+							<div class="el-form-item">
+								<label class="el-form-item__label" style="width: 100px;">事件:</label>
+								<div class="el-form-item__content" style="margin-left: 100px;margin-right: 25px;">
+									<div class="el-input">
+										<input type="text" autocomplete="off" class="el-input__inner" v-model="event">
+									</div>
+								</div>
+							</div>
+							<div class="el-form-item">
+								<label class="el-form-item__label" style="width: 100px;">另一种说法:</label>
+								<div class="el-form-item__content" style="margin-left: 100px;margin-right: 25px;">
+									<div class="el-input">
+										<input type="text" autocomplete="off" class="el-input__inner" v-model="otherone" @keyup.enter="makemaintext()">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="el-col el-col-12">
+						<div class="el-form-item__content" style="margin-left: 25px;margin-right: 100px;">
+							<div class="el-textarea">
+								<textarea autocomplete="off" class="el-textarea__inner" id="maintext" style="min-height: 160px;" v-model="maintext" >
+								</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="el-button el-button--primary" @click="makemaintext()">
+					<span>生成</span>
+				</button>
+				<button type="button" class="el-button el-button--primary" onclick="playAudio()">
+					<span>播放</span>
+				</button>
+				<div class="Au"></div>
+			</div>
+			<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+			<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/baidu_tts_cors.js.js" type="text/javascript" charset="utf-8"></script>
+		</body>
+</html>
