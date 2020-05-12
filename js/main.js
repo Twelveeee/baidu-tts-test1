@@ -63,5 +63,7 @@ function playAudio(){
 	    });
 	document.getElementById("palyButton").innerHTML="暂停";
 }
-
+function seeGithub(){
+	window.open("https://github.com/Twelveeee/baidu-tts-test1")
+}
 
