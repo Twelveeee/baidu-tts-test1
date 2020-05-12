@@ -4,13 +4,13 @@
 
 之后了解到百度语音合成能够免费使用。
 
-![image-20200501221551590](C:\Users\Twelveeee\AppData\Roaming\Typora\typora-user-images\image-20200501221551590.png)
+![](https://github.com/Twelveeee/baidu-tts-test1/blob/master/img/image-20200501221551590.png)
 
 就开始了我的营销号生成之旅!
 
 ## 一、注册登陆
 
-![](.\img\image-20200501222044618.png)
+![](https://github.com/Twelveeee/baidu-tts-test1/blob/master/img/image-20200501222044618.png)
 
 用你的百度账户登陆百度智能云
 
@@ -18,11 +18,11 @@ https://console.bce.baidu.com/ai/?_=1588342430760&fromai=1#/ai/speech/overview/i
 
 选择语音技术，创建一个应用。
 
-![image-20200501222159300](.\img\image-20200501222159300.png)
+![](https://github.com/Twelveeee/baidu-tts-test1/blob/master/img/image-20200501222159300.png)
 
 点击管理应用，查看你的API Key 和Secret Key。
 
-![image-20200501222349237](.\img\image-20200501222349237.png)
+![](https://github.com/Twelveeee/baidu-tts-test1/blob/master/img/image-20200501222349237.png)
 
 ## 二、获取token参数
 
@@ -128,6 +128,12 @@ xhr.onreadystatechange = function() {
 ```
 试看看效果怎么样；
 
-![image-20200512115746658](.\img\image-20200512115746658.png)
+![](https://github.com/Twelveeee/baidu-tts-test1/blob/master/img/image-20200512115746658.png)
 
 芜湖！完美！
+
+[查看源码][https://github.com/Twelveeee/baidu-tts-test1]
+
+[查看样例][https://twelveeee.github.io/baidu-tts-test1/]
+
+[百度文档][https://ai.baidu.com/ai-doc/SPEECH/yk38y8h3j]
