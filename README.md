@@ -133,4 +133,7 @@ xhr.onreadystatechange = function() {
 芜湖！完美！
 
 [查看源码][https://github.com/Twelveeee/baidu-tts-test1]
+
 [查看样例][https://twelveeee.github.io/baidu-tts-test1/]
+
+[百度文档][https://ai.baidu.com/ai-doc/SPEECH/yk38y8h3j]
