@@ -22,11 +22,16 @@ var VUE = new Vue({
 	},
 
 });
+
 var audio =null;
-let text = document.getElementById("maintext").value;
+
 function playAudio(){
+	let text = document.getElementById("maintext").value;
 	if(audio!=null){
+		audio.pause();
 		audio =null;
+		document.body.removeChild(document.getElementById("baiduTTS"));
+		document.getElementById("palyButton").innerHTML="播放";
 		return 0;
 	}
 	audio = btts({
@@ -35,7 +40,7 @@ function playAudio(){
 	        spd: 6,
 	        pit: 5,
 	        vol: 15,
-	        per: 4
+	        per: 1,
 	    }, {
 	        volume: 0.3,
 	        autoDestory: true,
@@ -56,6 +61,7 @@ function playAudio(){
 	            alert('timeout')
 	        }
 	    });
+	document.getElementById("palyButton").innerHTML="暂停";
 }
 
 

@@ -53,17 +53,16 @@ function btts(param, options) {
     }
 
     // 赋值预定义参数
-    data.cuid = data.cuid || data.tok;
-    data.ctp = 1;
-    data.lan = data.lan || 'zh';
-    data.aue = data.aue || 3;
-
+    data.cuid = data.cuid || data.tok;//用户表示
+    data.ctp = 1; //客户端WEB 为1
+    data.lan = data.lan || 'zh';//固定值zn
+    data.aue = data.aue || 3;//MP3格式
+	data.per = data.per ||5 //音库
     // 序列化参数列表
     var fd = [];
     for(var k in data) {
         fd.push(k + '=' + encodeURIComponent(data[k]));
     }
-
     // 用来处理blob数据
     var frd = new FileReader();
     xhr.responseType = 'blob';
@@ -74,16 +73,17 @@ function btts(param, options) {
         xhr.abort();
         isFunction(opt.onTimeout) && opt.onTimeout();
     }, timeout);
+	
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             clearTimeout(timer);
             if (xhr.status == 200) {
                 if (xhr.response.type === 'audio/mp3') {
-
                     // 在body元素下apppend音频控件
+					audio.id="baiduTTS"
                     document.body.appendChild(audio);
-
+					
                     audio.setAttribute('src', URL.createObjectURL(xhr.response));
 
                     // autoDestory设置则播放完后移除audio的dom对象
@@ -98,6 +98,7 @@ function btts(param, options) {
 
                 // 用来处理错误
                 if (xhr.response.type === 'application/json') {
+					alert("哎呦出错了，快去问看看别人吧")
                     frd.onload = function(){
                         var text = frd.result;
                         isFunction(opt.onError) && opt.onError(text);
